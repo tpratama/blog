@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/" component={homepage} />
+          <Route path="/" component={homepage} />
         </Switch>
       </ConnectedRouter>
     </BrowserRouter>

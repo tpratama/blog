@@ -1,11 +1,13 @@
 import React from 'react';
 
-function Hompeage() {
-  return (
-    <div>
-      <h1>Welcome to my page</h1>
-    </div>
-  );
+class Homepage extends React.PureComponent {
+  render() {
+    return (
+      <div>
+        <h1>Testing React Static</h1>
+      </div>
+    );
+  }
 }
 
-export default Hompeage;
+export default Homepage;
