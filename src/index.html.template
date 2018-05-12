@@ -12,5 +12,5 @@
     <div id="root"></div>
   </body>
 
-  <script src="dist/887784c00e7f08b050b594913547f877a22d2ba1/index.min.js"></script>
+  <script src="dist/<%= htmlWebpackPlugin.options.hash %>/index.min.js"></script>
 </html>
