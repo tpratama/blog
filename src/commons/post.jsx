@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { Segment, Header, Divider, Grid, Loader } from 'semantic-ui-react';
+import { Label, Segment, Header, Divider, Grid, Loader } from 'semantic-ui-react';
 import mdUtil from '../utils/markdown';
 
 class Post extends React.Component {
@@ -39,13 +39,12 @@ class Post extends React.Component {
     }
 
     return (
-      <Segment className="post">
         <Grid padded>
           <Grid.Row>
             <Grid.Column>
               <Header as="h1"
                 content={this.props.title}
-                subheader={`Created At : ${this.props.createdAt}`}
+                subheader={this.props.headline}
               />
             </Grid.Column>
           </Grid.Row>
@@ -59,12 +58,16 @@ class Post extends React.Component {
             <Grid.Column>
             <Divider/>
             <div style={{float: "right" }}>
-              Category: {this.props.categories}
+              {
+                this.props.categories.map(category => <Label key={`${_.uniqueId()}-label-category`}>
+                {category}
+                </Label>)
+              }
+              <Label>{this.props.createdAt}</Label>
             </div>
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Segment>
     )
   }
 }
@@ -74,6 +77,7 @@ Post.propsType = {
   title: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
   categories: PropTypes.array.isRequired,
+  headline: PropTypes.string.isRequired,
 };
 
 export default Post;

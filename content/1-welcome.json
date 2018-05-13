@@ -1,5 +1,6 @@
 {
     "title": "Welcome to My Blog",
+    "headline": "This is the first post using my CMS !",
     "content": "./source/welcome.md",
     "section": "CMS",
     "categories": ["other"]

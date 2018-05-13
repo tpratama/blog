@@ -18,6 +18,7 @@ class Main extends React.PureComponent {
             content={post.content}
             createdAt={post.timestamp}
             categories={post.categories}
+            headline={post.headline}
           />
         )
       })
