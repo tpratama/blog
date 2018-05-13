@@ -24,7 +24,7 @@ class Main extends React.PureComponent {
     };
 
     return (
-      <Grid>
+      <Grid >
         <Grid.Row>
           <Grid.Column>
             <Navbar/>
@@ -32,7 +32,7 @@ class Main extends React.PureComponent {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <Container>
+            <Container className="mobileCompatible">
               {renderPost(contents, 0, 5)}
             </Container>
           </Grid.Column>

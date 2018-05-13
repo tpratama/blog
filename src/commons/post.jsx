@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { Segment, Header, Divider, Grid } from 'semantic-ui-react';
+import { Segment, Header, Divider, Grid, Loader } from 'semantic-ui-react';
 import mdUtil from '../utils/markdown';
 
 class Post extends React.Component {
@@ -25,7 +25,17 @@ class Post extends React.Component {
 
   render() {
     if (!this.state.content) {
-      return null;
+      return (
+        <Segment>
+          <Grid padded>
+            <Grid.Row>
+              <Grid.Column>
+                <Loader active />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      );
     }
 
     return (

@@ -9,6 +9,18 @@ pre {
   background-color: lightslategray;
   color: black;
   padding: 10px;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
 }
 
 .post {
@@ -21,4 +33,8 @@ pre {
 p code {
   color: indianred;
   background-color: lightyellow;
+}
+
+@media screen and (max-width: 760px){
+  .mobileCompatible{ width: 100vw; margin: 0; padding: 0; }
 }
