@@ -30,7 +30,7 @@ class Post extends React.Component {
 
     return (
       <Segment className="post">
-        <Grid>
+        <Grid padded>
           <Grid.Row>
             <Grid.Column>
               <Header as="h1"
