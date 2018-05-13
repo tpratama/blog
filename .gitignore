@@ -1,2 +1,5 @@
 .idea/
 node_modules/
+category.config.json
+content.config.json
+timestamp.config.json

@@ -1,0 +1,6 @@
+{
+    "title": "Welcome to My Blog",
+    "content": "./source/welcome.md",
+    "section": "CMS",
+    "categories": ["other"]
+}

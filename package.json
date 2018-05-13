@@ -4,7 +4,8 @@
   "description": "Blogging web site",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/gulp",
+    "dev-server": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,10 +23,13 @@
     "babel-preset-stage-2": "~6.24.1",
     "bluebird": "~3.5.0",
     "classnames": "~2.2.5",
+    "commonmark": "^0.28.1",
+    "commonmark-react-renderer": "^4.3.4",
     "connected-react-router": "~4.2.3",
     "css-loader": "~0.28.7",
     "dotenv": "~4.0.0",
     "event-source-polyfill": "0.0.12",
+    "file-loader": "^1.1.11",
     "google-map-react": "~0.24.0",
     "gulp-autoprefixer": "~4.0.0",
     "gulp-clean-css": "~3.7.0",
@@ -43,6 +47,7 @@
     "passport": "~0.3.2",
     "prop-types": "~15.5.10",
     "query-string": "~5.0.0",
+    "raw-loader": "^0.5.1",
     "react": "~15.6.1",
     "react-datepicker": "~0.64.0",
     "react-dom": "~15.6.1",
@@ -59,9 +64,11 @@
     "redux-persist": "~4.8.3",
     "redux-persist-transform-immutable": "~4.3.0",
     "redux-thunk": "~2.2.0",
+    "requirejs": "^2.3.5",
     "semantic-ui-react": "~0.72.0",
     "sprintf": "~0.1.5",
     "style-loader": "~0.19.0",
+    "text": "github:requirejs/text",
     "universal-cookie": "~2.0.8",
     "webpack-dev-server": "~2.6.1"
   },

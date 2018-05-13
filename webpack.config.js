@@ -10,7 +10,9 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(`./dist/${hash}`),
+    chunkFilename: '[name].index.min.js',
     filename: 'index.min.js',
+    publicPath: `/dist/${hash}/`,
   },
   plugins: [
     // http://stackoverflow.com/questions/25384360/how-to-prevent-moment-js-from-loading-locales-with-webpack
@@ -55,6 +57,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'raw-loader',
+          }
+        ]
+      }
     ],
   },
   devServer: {
