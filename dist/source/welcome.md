@@ -23,4 +23,4 @@ And I have magic file to generate all the configs... This magic file will read a
 So in the future we can filter posts by category or filter post by timestamp. If I want to add some content, I can create it under `content` directory.
 You can view this page repo to know how this works (currently this cms is so sucks lol :v). And last, the section is dynamically for paging in the future :p just wait till it implemented.
 
-Thank you, I will update as soon as I continue my development!
+Thank you, I will update as I continue my development!
