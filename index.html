@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
-    <link rel="stylesheet" href="https://unpkg.com/react-select/dist/react-select.css">
-    <link rel="stylesheet" href="dist/62e72696744da08c86b6f40427625d26ba04b096/styles/index.css">
+    <link rel="stylesheet" href="dist/f1ebd6a8d66dfb2e7cc0a66cd8d009d934cc3267/styles/index.css">
   </head>
 
 
   <body class="container-fluid">
+    <div id="fb-root"></div>
     <div id="root"></div>
+
   </body>
 
-  <script src="dist/62e72696744da08c86b6f40427625d26ba04b096/index.min.js"></script>
+    <script>
+        function loadFBComment(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=117295721623214&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        };
+
+        loadFBComment(document, 'script', 'facebook-jssdk');
+    </script>
+  <script src="dist/f1ebd6a8d66dfb2e7cc0a66cd8d009d934cc3267/index.min.js"></script>
 </html>

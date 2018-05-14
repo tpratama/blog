@@ -4,7 +4,7 @@
   "description": "Blogging web site",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/gulp",
+    "build": "node ./src/scripts/build-content.js && ./node_modules/.bin/gulp",
     "dev-server": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
     "commonmark-react-renderer": "^4.3.4",
     "connected-react-router": "~4.2.3",
     "css-loader": "~0.28.7",
+    "disqus-react": "^1.0.5",
     "dotenv": "~4.0.0",
     "event-source-polyfill": "0.0.12",
     "file-loader": "^1.1.11",
@@ -66,6 +67,7 @@
     "redux-thunk": "~2.2.0",
     "requirejs": "^2.3.5",
     "semantic-ui-react": "~0.72.0",
+    "slugify": "^1.3.0",
     "sprintf": "~0.1.5",
     "style-loader": "~0.19.0",
     "text": "github:requirejs/text",

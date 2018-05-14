@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import slugify from 'slugify';
 
-import { Label, Segment, Header, Divider, Grid, Loader } from 'semantic-ui-react';
+import { Container, Button, Popup, Label, Segment, Header, Divider, Grid, Loader } from 'semantic-ui-react';
 import mdUtil from '../utils/markdown';
 
 class Post extends React.Component {
@@ -10,7 +11,8 @@ class Post extends React.Component {
     super(props);
 
     this.state = {
-      content: null
+      content: null,
+      showComment: false,
     };
   }
 
@@ -24,6 +26,19 @@ class Post extends React.Component {
   }
 
   render() {
+    const fbComment = (
+      <Grid.Row>
+        <Grid.Column>
+          <div
+            className="fb-comments"
+            data-width="600"
+            data-href={`http://tpratama.github.io/blog#${slugify(this.props.title)}`}
+            data-numposts="5"
+          />
+        </Grid.Column>
+      </Grid.Row>
+    );
+
     if (!this.state.content) {
       return (
         <Segment>
@@ -39,35 +54,57 @@ class Post extends React.Component {
     }
 
     return (
-        <Grid padded>
-          <Grid.Row>
-            <Grid.Column>
-              <Header as="h1"
-                content={this.props.title}
-                subheader={this.props.headline}
-              />
-            </Grid.Column>
-          </Grid.Row>
+      <Grid padded style={{ paddingBottom: "80px" }}>
+        <Grid.Row>
+          <Grid.Column>
+            <Header as="h1"
+              content={this.props.title}
+              subheader={this.props.headline}
+            />
+          </Grid.Column>
+        </Grid.Row>
+        <Divider/>
+        <Grid.Row>
+          <Grid.Column>
+          {mdUtil.render(this.state.content)}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
           <Divider/>
-          <Grid.Row>
-            <Grid.Column>
-            {mdUtil.render(this.state.content)}
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-            <Divider/>
-            <div style={{float: "right" }}>
-              {
-                this.props.categories.map(category => <Label key={`${_.uniqueId()}-label-category`}>
-                {category}
-                </Label>)
-              }
-              <Label>{this.props.createdAt}</Label>
-            </div>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+            <Grid stackable>
+              <Grid.Row>
+                <Grid.Column width={2}>
+                <Button
+                  icon="comment"
+                  onClick={() => this.setState({
+                    showComment: !this.state.showComment
+                  })
+                  }
+                />
+                </Grid.Column>
+                <Grid.Column floated="right" width={10}>
+                  <div style={{float: "right" }}>
+                    {
+                      this.props.categories.map(category => <Label key={`${_.uniqueId()}-label-category`}>
+                        {category}
+                      </Label>)
+                    }
+                    <Label>{this.props.createdAt}</Label>
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <div style={{ display: this.state.showComment ? 'block' : 'none' }}>
+                    { fbComment }
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }
