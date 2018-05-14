@@ -23,8 +23,6 @@
           js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=117295721623214&autoLogAppEvents=1';
           fjs.parentNode.insertBefore(js, fjs);
         };
-
-        loadFBComment(document, 'script', 'facebook-jssdk');
     </script>
   <script src="dist/<%= htmlWebpackPlugin.options.hash %>/index.min.js"></script>
 </html>

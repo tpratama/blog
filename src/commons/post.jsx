@@ -23,6 +23,8 @@ class Post extends React.Component {
           content: content.data
         });
       });
+
+    loadFBComment(document, 'script', 'facebook-jssdk');
   }
 
   render() {
